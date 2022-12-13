@@ -1,5 +1,14 @@
+// Section names such as "DnsServer", "DnsRule" are all case-insensitive.
+// All empty lines and whitespaces will be omitted, comment lines are
+// start with `//`, inline comments are start with `#`, all characters
+// after `#` will be treated as comments.
 [Rule]
-# DNS
+// [Rule] is equalient to [RoutingRule]
+// Rules better group by their types (DOMAIN/IP/USER-AGENT)
+// and targets (PROXY/DIRECT/REJECT) for better performance.
+
+//# DNS
+DOMAIN-SUFFIX,setup.icloud.com,PROXY
 IP-CIDR,1.1.1.1/32,PROXY
 IP-CIDR,1.0.0.1/32,PROXY
 IP-CIDR,8.8.8.8/32,PROXY
